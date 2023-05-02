@@ -1,0 +1,5 @@
+Name,Memory,ProcessorCount,Type
+MSDC01,2,4,Server
+MSFILE01,2,4,Server
+MSCL01,2,4,Client
+MSCL02,2,4,Client
