@@ -13,8 +13,8 @@ if (Get-Item $CsvFullPath -ErrorAction Ignore) {
     # For each machine in the csv file
     foreach ($item in $csvfile) {
         switch ($item.Type) {
-            "Server" {$ISO = "D:\OS\WS22.iso"; $SwitchName = "NATSwitch"}
-            "Client" {$ISO = "D:\OS\W10Ex64.iso"; $SwitchName = "LAN"}
+            "Server" {$ISO = "C:\OS\Server2022.iso"; $SwitchName = "NATSwitch"}
+            "Client" {$ISO = "C:\OS\Win10.iso"; $SwitchName = "LAN"}
         }
         try {
             # If VM with same name already exists throw an error
