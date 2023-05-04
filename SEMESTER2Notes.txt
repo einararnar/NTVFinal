@@ -1,6 +1,7 @@
 DOMAIN NAME: einaram.local
 PASSWORD FOR USERS: Pa$$w0rd
 
+
 ########################## ON-PREM #############################################
 
 Step1: download iso files
@@ -9,11 +10,13 @@ step3: fetch new vm script and vms csv file.  -> run new vm PS script
 
 step4: Install os on MSDC01
 step5: run New-PSDomainController on dc1
-step6: Install-WindowsFeature -Name Routing -> Install-RemoteAccess -VpnType RoutingOnly -> New-NetNat -Name "NAT-LAN" -InternalIPInterfaceAddressPrefix 192.168.50.0/24
+step6: run Install-PSRouting.ps1
 
-Create OU "ORG" -> Create OU "Machines in ORG"
+###### USER CREATION SCRIPT ##########
+1: use user creation script and user csv file from 1st semester
+2: Script should create ou structure, users and groups
 
 redircmp "OU=Machines,OU=ORG,DC=einaram,DC=local"
 
-step7: Install OS on MSCL01 to check if NAT is working
+step7: Install OS on MSCL01 to check if NAT and dhcp is working (Will install WAC later)
 step8: Install OS on MSFILE01 -> Add to domain
