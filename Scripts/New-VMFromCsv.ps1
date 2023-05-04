@@ -8,8 +8,14 @@ if (!$VMPath.EndsWith('\')) {$VMPath = $VMPath.Insert($VMPath.Length,'\')}
 cls
 # Check if the csv file exists and try to import it
 if (Get-Item $CsvFullPath -ErrorAction Ignore) {
+    # Import Csv file
     try { $csvfile = Import-Csv $CsvFullPath -ErrorAction Stop} catch { Write-Warning "Csv file not found" }
-
+    
+    # Create a private switch if it does not exist
+    if (-not(Get-VMSwitch -Name LAN -ErrorAction Ignore)) {
+        New-VMSwitch -Name LAN -SwitchType Private
+    }
+    
     # For each machine in the csv file
     foreach ($item in $csvfile) {
         switch ($item.Type) {
