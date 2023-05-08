@@ -5,7 +5,6 @@ PASSWORD FOR USERS: Pa$$w0rd
 ########################## ON-PREM #############################################
 
 Step1: download iso files
-steo2: New-VMSwitch -SwitchType Private
 step3: fetch new vm script and vms csv file.  -> run new vm PS script
 
 step4: Install os on MSDC01
@@ -13,7 +12,7 @@ step5: run New-PSDomainController on dc1
 step6: run Install-PSRouting.ps1
 
 ###### USER CREATION ##########
-1: Create OU People under ORG
+1: Create OU People under ORG, Create OU Machines under ORG
 2: Create 2x groups SysAdmins and All Domain Users
 3: run user creation script from last semester
 
