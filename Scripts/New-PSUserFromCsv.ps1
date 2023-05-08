@@ -7,7 +7,7 @@ try {
 } catch {
     Write-Warning "CSV Not found Location: $Path"
 }
-$forest = "OU=Domain Users,OU=ORG,DC=eam1,DC=ntv"
+$forest = "OU=People,OU=ORG,DC=einaram,DC=local"
 $userpass = Read-Host "Enter Password users" -AsSecureString
 foreach ($user in $users) {
     $department = $user.Department
