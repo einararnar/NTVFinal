@@ -1,0 +1,26 @@
+NOTES FINAL SEMESTER 2:
+
+9.5.2023
+
+AD Created adm.teacher account
+Azure Tenant - Invited gudjon@ntv.is
+
+Created OU and Group: IT HelpDesk
+Changed group membership for ademin and gilbat moved to IT HelpDesk
+
+changed sync settings to only sync IT and executive
+enabled password writeback - important for SSO
+
+Change User Sign in to enable SSO
+Made a new GPO to enable seamless single-sign on
+
+Created a new m365 user and gave him an e5 license
+
+Install OS for MSCL02 but do NOT domain join
+
+Extracted hardware id MD101 Lab2
+Imported HWID to endpoint portal
+
+Created a new OOBE profile
+
+MDM auto enrollment already enabled

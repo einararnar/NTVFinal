@@ -1,0 +1,123 @@
+TO DO LIST:
+
+ON-PREM:
+	Disable default admin accounts
+	Admin users stronger passwords
+	pretected users admin accounts
+
+Intune Machine
+
+Hybrid:
+
+MDM:
+#####Emable auto enrollment
+domain joined should be hybrid joined
+#######New GPO for azuread sso
+########new Autopilot oobe
+########MDM integration Group policy for w10 on-prem devices
+#######IT HelpDesk help desk operator role Intune/EM
+#####compliance policy to make sure that devices that do not have firewall and defender installed and enabled
+#####retire automatically within 5 days and user gets and email for IT and Executive department
+
+Configuration profile users cant change background
+install M365 apps intune
+config policy to make w10 enterprise and edu track win updates and endpoint analytics
+update rings win10 are auto updated and rebooted without end-user control
+
+Connect Azure to Windows Admin Center:
+Invite eam1.final@nemandi.ntv.is to M365 tenant make Global Admin to directory
+Register Windows Admin Center with azure using those credentials
+Sign into WAC with those creds
+
+Install:
+	AD Extension
+	Azure Extended Network
+	DHCP Extension
+	DNS Extension
+	Security Extension
+
+Using WAC:
+	set up a 3-2-1 backup for file server - weekly backup 12 month retention
+	Document encryption passphrase
+	set up azure backup for DC backup set to backup ADDS database
+
+	Set up an azure Network adapter on the DC
+
+Monitoring:
+
+	2 different Log Analytics workspaces
+	enable LA / Insights on all VMs report to one workspace
+	enable azure activity log to the other one
+	alert and send email if VM CPU above 90% over 60 min critical severity level
+
+
+AZURE:
+
+		Transfer new subscription
+
+		Create  2 Recource groups
+		for internally used close to iceland and externally used in another continent
+		
+		set up cost management to not go over $200
+		Monito the whole subscription and all the resource groups
+		have cost alerts set up on a monthly reset period
+		Create a budged alert condition alert @nemandi.ntv.is when 50%
+
+		Web App:
+			<webappname>.azurewebsites.net
+			runtime stack .NET 6
+			Windows
+			Region Outside EU
+			Insights enabled
+			alert if 404 error more that 10 times per 24 hour
+			action plan created where all admins in AD are alerted with email
+			sec level critical
+
+			BONUS
+			web app https only
+			only from on-prem and NTV IP
+
+Cloud storage
+
+separate storage account located near iceland
+pretected from datacenter failure
+accessible anywhere
+mapped as network drive on file server SMB
+backup daily in the same resource group as the file share itself
+10 GB quota
+email when quota at 7GB with warning alert
+
+IaaS cloud
+
+New VM as a DC
+cheapest one
+Managed disks
+login with azure ad enabled
+boot diag enabled
+backup enabled daily 12 month retention
+
+disk:
+	16GB
+	P3 performance
+	zone redundant
+	default encryption
+static IP set on the vNIC in Azure
+Roles installed:
+	ADDS
+	DHCP
+	DNS
+	Backup
+
+Cloud security:
+
+enforced password protection:
+	Custom banned password:
+		Ntverbestur.1996
+		liverpool1
+		Pa$$w0rd
+		Pa55.wrd
+MFA setup and login for all Hybrid admin users enforced with conditional acces policy
+when the sign in risk is High or Medium
+
+Give all users a week to snooze MFA requirements
+Global admin excluded
