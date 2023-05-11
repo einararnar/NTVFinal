@@ -24,3 +24,16 @@ Imported HWID to endpoint portal
 Created a new OOBE profile
 
 MDM auto enrollment already enabled
+
+Updated SSO GPO
+
+Had trouble with getting MSCL01 to get hybrid joined because I wasn't actually syncing Machines OU, so after updating the sync settings in AD Connect it was finally working
+
+Made a configuration profile to stop users from changing desktop background
+
+Made everything in Phase 3 Hybrid up to where I needed a subscription
+
+invited eam1.final@nemandi.ntv.is and made Global Admin
+Signed up to a new trial subscription
+
+Having trouble changing directory
